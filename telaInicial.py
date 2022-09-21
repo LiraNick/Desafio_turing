@@ -18,11 +18,10 @@ def buscaPergunta(linha=1):
     #print(pergunta[0])
     aux = perguntaLinha[0]    
     if aux == "P":
-        pergunta["pergunta"] = perguntaLinha
-        pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1)
-        pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2)
-        pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3)
-        pergunta["opcaoCorreta"] = pergunta["opcaoCorreta"].strip("\n")
+        pergunta["pergunta"] = perguntaLinha.strip("P:\n")
+        pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).strip("1:\n")
+        pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).strip("2:\n")
+        pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).strip("\n")
         return pergunta
     elif aux == "1":
         linha = linha-1
