@@ -4,8 +4,9 @@ import linecache
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
-def buscaPerguntaAleatoria():
-    linha = randrange(21)
+def buscaPerguntaAleatoria(linha=1):
+    #reservado para teste de perguntas aleatórias
+    #linha = randrange(21)
     
     pergunta = linecache.getline('perguntasRespostas.txt', linha)
 
@@ -22,6 +23,10 @@ def buscaPerguntaAleatoria():
         linha = linha-2
         pergunta = linecache.getline('perguntasRespostas.txt', linha)
         print(pergunta)
+    elif aux == "R":
+        linha = linha-3
+        pergunta = linecache.getline('perguntasRespostas.txt', linha)
+        print(pergunta)
     
 
 telaInicial = open('tela01.txt')
@@ -34,5 +39,6 @@ for i in range(14):
 
 buscaPerguntaAleatoria()
 
+buscaPerguntaAleatoria(5)
 
 

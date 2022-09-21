@@ -1,21 +1,28 @@
 P: Pergunta 1 Aqui vai uma perguna lala
 1: Resposta1
 2: Resposta2
+R: 1
 P: Pergunta 2 Aqui vai uma perguna lala
 1: Resposta1
 2: Resposta2
+R: 1
 P: Pergunta 3 Aqui vai uma perguna lala
 1: Resposta1
 2: Resposta2
+R: 1
 P: Pergunta 4 Aqui vai uma perguna lala
 1: Resposta1
 2: Resposta2
+R: 1
 P: Pergunta 5 Aqui vai uma perguna lala
 1: Resposta1
 2: Resposta2
+R: 1
 P: Pergunta 6 Aqui vai uma perguna lala
 1: Resposta1
 2: Resposta2
+R: 1
 P: Pergunta 7 Aqui vai uma perguna lala
 1: Resposta1
 2: Resposta2
+R: 1
