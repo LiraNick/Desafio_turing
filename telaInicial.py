@@ -4,17 +4,26 @@ import linecache
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
-def buscaPerguntaAleatoria(linha=1):
+def buscaPergunta(linha=1):
     #reservado para teste de perguntas aleatórias
     #linha = randrange(21)
+    pergunta = {"pergunta":"",
+                "resposta1":"",
+                "resposta2":"",
+                "opcaoCorreta":""} 
     
-    pergunta = linecache.getline('perguntasRespostas.txt', linha)
+    perguntaLinha = linecache.getline('perguntasRespostas.txt', linha)
 
     #print(pergunta)
-    print(pergunta[0])
-    aux = pergunta[0]    
+    #print(pergunta[0])
+    aux = perguntaLinha[0]    
     if aux == "P":
-        print(pergunta)
+        pergunta["pergunta"] = perguntaLinha
+        pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1)
+        pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2)
+        pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3)
+        pergunta["opcaoCorreta"] = pergunta["opcaoCorreta"].strip("\n")
+        return pergunta
     elif aux == "1":
         linha = linha-1
         pergunta = linecache.getline('perguntasRespostas.txt', linha)
@@ -37,8 +46,14 @@ for i in range(14):
     print(content[i])
     
 
-buscaPerguntaAleatoria()
+teste1 = buscaPergunta()
+print(teste1)
 
-buscaPerguntaAleatoria(5)
+print(teste1["pergunta"])
+asd = input("Escola uma opcao")
+if teste1["opcaoCorreta"] == asd:
+    print("WOHO!")
+
+#buscaPerguntaAleatoria(5)
 
 
