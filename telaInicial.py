@@ -15,10 +15,10 @@ def buscaPergunta(linha=1):
 
     aux = perguntaLinha[0]    
     if aux == "P":
-        pergunta["pergunta"] = perguntaLinha.strip("P:\n")
-        pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).strip("1:\n")
-        pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).strip("2:\n")
-        pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).strip("\n")
+        pergunta["pergunta"] = perguntaLinha.replace("P: ", "").strip("\n")
+        pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).replace("1: ", "").strip("\n")
+        pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).replace("2: ", "").strip("\n")
+        pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).replace("R: ", "").strip("\n")
         return pergunta
     else:
         print("Não é uma pergunta")
@@ -26,6 +26,7 @@ def buscaPergunta(linha=1):
     
 
 telaInicial = open('tela01.txt')
+conteudoFase = open('perguntasRespostas.txt')
 
 content = telaInicial.readlines()
 
@@ -33,14 +34,23 @@ for i in range(14):
     print(content[i])
     
 
-teste1 = buscaPergunta()
-print(teste1)
 
-print(teste1["pergunta"])
-asd = input("Escola uma opcao")
-if teste1["opcaoCorreta"] == asd:
-    print("WOHO!")
 
-#buscaPerguntaAleatoria(5)
+aux = 1
+for i in range(5):
+    perguntaLoop = buscaPergunta(aux)
+    print(perguntaLoop["pergunta"], "\n\n")
+    print("1:", perguntaLoop["resposta1"])
+    print("2:", perguntaLoop["resposta2"], "\n\n")
+    
+    print("Colinha:", perguntaLoop["opcaoCorreta"], "\n")
+    escolhaInput = str(input("Escola uma opcao: "))
+    
+
+    
+    if perguntaLoop["opcaoCorreta"] == escolhaInput:
+        print("WOHO!")
+    aux = aux+4
+
 
 
