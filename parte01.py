@@ -7,20 +7,20 @@ pergunta = "Nossa aventura se passa na idade média e se inicia em um condado mu
 def lin():
 
     
-    if c in range(1000):
+    for c in range(1000):
       lin()
       print(pergunta[c], end='', flush=True)
       time.sleep(0.02)
       print(' Pronto!')
 
     
-    if c in range(1000):
+    for c in range(1000):
       lin()
       print(pergunta[c], end='', flush=True)
       time.sleep(0.02)
       print(' Pronto!')
 
-    if c in range(1000):
+    for c in range(1000):
       lin()
       print(pergunta[c], end='', flush=True)
       time.sleep(0.02)
