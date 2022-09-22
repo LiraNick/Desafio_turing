@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 import os
 from random import randrange
 import linecache
@@ -5,8 +6,6 @@ import linecache
 os.system('cls' if os.name == 'nt' else 'clear')
 
 def buscaPergunta(linha=1):
-    #reservado para teste de perguntas aleatórias
-    #linha = randrange(21)
     pergunta = {"pergunta":"",
                 "resposta1":"",
                 "resposta2":"",
@@ -14,8 +13,6 @@ def buscaPergunta(linha=1):
     
     perguntaLinha = linecache.getline('perguntasRespostas.txt', linha)
 
-    #print(pergunta)
-    #print(pergunta[0])
     aux = perguntaLinha[0]    
     if aux == "P":
         pergunta["pergunta"] = perguntaLinha.strip("P:\n")
@@ -23,18 +20,9 @@ def buscaPergunta(linha=1):
         pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).strip("2:\n")
         pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).strip("\n")
         return pergunta
-    elif aux == "1":
-        linha = linha-1
-        pergunta = linecache.getline('perguntasRespostas.txt', linha)
-        print(pergunta)
-    elif aux == "2":
-        linha = linha-2
-        pergunta = linecache.getline('perguntasRespostas.txt', linha)
-        print(pergunta)
-    elif aux == "R":
-        linha = linha-3
-        pergunta = linecache.getline('perguntasRespostas.txt', linha)
-        print(pergunta)
+    else:
+        print("Não é uma pergunta")
+        return NULL
     
 
 telaInicial = open('tela01.txt')
