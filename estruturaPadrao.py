@@ -1,12 +1,17 @@
 import os
 import linecache
 import time
-poli = "="*10
+poli = "="*15
 correto = False
-escolha = "Escolhe a opção:"
+escolha = "Escolha a opção: "
 os.system('cls' if os.name == 'nt' else 'clear')
+telaInicial = open('tela01.txt')
+content = telaInicial.readlines()
 
-print(f"\n {poli} JOGO {poli} \n")
+for i in range(14):
+    print(content[i].strip("\n"))
+    
+print(f"\n {poli} 💍 Lord of the Rings 💍 {poli} \n")
 vidas=3
 def slowprint(texto, atraso=2):
   for c in texto:
@@ -19,17 +24,6 @@ pergunta = {"pergunta":"",
     
 
 
-def buscaPergunta(linha=1):
-    #reservado para teste de perguntas aleatórias
-    #linha = randrange(21)
-    
-
-    #print(pergunta)
-    #print(pergunta[0])
-    aux = perguntaLinha[0]    
-    if aux == "P":
-        
-        return pergunta
 
 c=2
 usuario=str(input("Digite seu nome de usuario: "))
@@ -47,14 +41,17 @@ while(c!=0):
             slowprint(pergunta["pergunta"],0.001)
             print("\n")
             print(1,pergunta["resposta1"])
-            print("\n")
+            
             print(2,pergunta["resposta2"])
+            print("\n")
             if str(input(escolha))==pergunta["opcaoCorreta"]:
-                print("correto")
+                print("\n")
+                print("CORRETO")
+                print("\n")
                 correto = True
             else:
                 vidas = vidas -1
-                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas}")
+                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas} \n")
         
     if vidas==0:
         break    
@@ -73,14 +70,16 @@ while(c!=0):
             slowprint(pergunta["pergunta"],0.001)
             print("\n")
             print(1,pergunta["resposta1"])
-            print("\n")
             print(2,pergunta["resposta2"])
+            print("\n")
             if str(input(escolha))==pergunta["opcaoCorreta"]:
-                print("correto")
+                print("\n")
+                print("CORRETO")
+                print("\n")
                 correto = True
             else:
                 vidas = vidas -1
-                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas}")    
+                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas} \n")    
     if vidas==0:
         break    
     else:
@@ -98,11 +97,11 @@ while(c!=0):
             slowprint(pergunta["pergunta"],0.001)
             print("\n")
             if str(input(escolha))==pergunta["opcaoCorreta"]:
-                print("correto")
+                print("\n CORRETO \n")
                 correto = True
             else:
                 vidas = vidas -1
-                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas}")
+                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas} \n")
     if vidas==0:
         break    
     else:
@@ -120,14 +119,14 @@ while(c!=0):
             slowprint(pergunta["pergunta"],0.001)
             print("\n")
             print(1,pergunta["resposta1"])
-            print("\n")
             print(2,pergunta["resposta2"])
+            print("\n")
             if str(input(escolha))==pergunta["opcaoCorreta"]:
                 print("correto")
                 correto = True
             else:
                 vidas = vidas -1
-                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas}")
+                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas} \n")
     if vidas==0:
         break    
     else:
@@ -149,7 +148,7 @@ while(c!=0):
                 correto = True
             else:
                 vidas = vidas -1
-                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas}")
+                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas}\n")
     
     
 print("fim de jogo")
