@@ -34,23 +34,31 @@ for i in range(14):
     print(content[i])
     
 
+endGeral = False
+vidaUsuario = 2
+#menu principal
+while endGeral == False:
 
+    aux = 1
+    for i in range(5):
+        perguntaLoop = buscaPergunta(aux)
+        print(perguntaLoop["pergunta"], "\n\n")
+        print("1:", perguntaLoop["resposta1"])
+        print("2:", perguntaLoop["resposta2"], "\n\n")
 
-aux = 1
-for i in range(5):
-    perguntaLoop = buscaPergunta(aux)
-    print(perguntaLoop["pergunta"], "\n\n")
-    print("1:", perguntaLoop["resposta1"])
-    print("2:", perguntaLoop["resposta2"], "\n\n")
-    
-    print("Colinha:", perguntaLoop["opcaoCorreta"], "\n")
-    escolhaInput = str(input("Escola uma opcao: "))
-    
+        print("Colinha:", perguntaLoop["opcaoCorreta"], "\n")
+        escolhaInput = str(input("Escola uma opcao: "))
 
-    
-    if perguntaLoop["opcaoCorreta"] == escolhaInput:
-        print("WOHO!")
-    aux = aux+4
-
-
-
+        if perguntaLoop["opcaoCorreta"] == escolhaInput:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print("WOHO! Você ainda possui", vidaUsuario, " Vidas.\n\n")
+        else:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            vidaUsuario = vidaUsuario-1
+            print("BOOO! Você possui", vidaUsuario, " Vidas.\n\n")
+            if vidaUsuario == 0:
+                print("Você Morreu!")
+                endGeral = True
+                break
+        aux = aux+4
+        
