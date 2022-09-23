@@ -1,11 +1,11 @@
 P: Nossa aventura se passa na idade média e se inicia em um condado muito tranquilo e distante, no qual você mora com seu tio Bilbo. Porém em um dia inusitado, você descobre que a paz do condado pode ser comprometida caso você não assuma a responsabilidade de levar um determinado anel de poder para uma determinada cidade élfica. Qual será sua decisão? 
-1: Assumir a responsabilidade de entregar o anel ao elfos.
+1: Assumir a responsabilidade de entregar o anel aos elfos.
 2: Dizer pra geral que este BO não é seu.
 R: 1
 P: Chegando em Valfenda, elfos, anões e humanos se reúnem para decidir o que será feito com o anel do poder, no intuito de salvar o mundo que conhecem. Todos entram em acordo de que o melhor seria destruí-lo, porém é necessário que alguém assuma o risco de levar o anel até a montanha Mordor. O que você fará?
 1: Assumir novamente a responsabilidade por um BO que não é seu.
 2: Ficar quieto e deixar que todos se digladiem e escolham alguém que com toda certeza será corrompido pelo poder.
-R: 1
+R: 2
 P: Antes de deixar Valfenda, você adquire de seu tio uma importante espada que lhe dará a vantagem de brilhar na presença de Orcs, qual seria o nome essa espada?
 1: Ferruada
 2: Ferradura

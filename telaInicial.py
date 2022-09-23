@@ -3,6 +3,18 @@ import os
 from random import randrange
 import linecache
 
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 os.system('cls' if os.name == 'nt' else 'clear')
 
 def buscaPergunta(linha=1):
@@ -52,11 +64,13 @@ while endGeral == False:
 
         if perguntaLoop["opcaoCorreta"] == escolhaInput:
             os.system('cls' if os.name == 'nt' else 'clear')
-            print("WOHO! Você ainda possui", vidaUsuario, " Vidas.\n\n")
+            print(f"{bcolors.OKGREEN} WOHO! Você ainda possui {vidaUsuario} Vidas.{bcolors.ENDC}\n\n")
+            #print("WOHO! Você ainda possui", vidaUsuario, " Vidas.\n\n")
         else:
             os.system('cls' if os.name == 'nt' else 'clear')
             vidaUsuario = vidaUsuario-1
-            print("BOOO! Você possui", vidaUsuario, " Vidas.\n\n")
+            print(f"{bcolors.WARNING} BOOO! Você possui {vidaUsuario} Vidas.{bcolors.ENDC}\n\n")
+            #print("BOOO! Você possui", vidaUsuario, " Vidas.\n\n")
             if vidaUsuario == 0:
                 print("Você Morreu!")
                 endGeral = True
