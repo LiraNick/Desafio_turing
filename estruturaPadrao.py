@@ -11,7 +11,10 @@ content = telaInicial.readlines()
 for i in range(14):
     print(content[i].strip("\n"))
     
+
 print(f"\n {poli} 💍 Senhor dos anéis do nicolas ;) 💍 {poli} \n")
+
+
 vidas=3
 def slowprint(texto, atraso=2):
   for c in texto:
@@ -51,7 +54,7 @@ while(c!=0):
                 correto = True
             else:
                 vidas = vidas -1
-                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas} \n")
+                print(f"Você escolheu a opção errada, perdeu uma vida \nVIDA TOTAL:{vidas} \n")
         
     if vidas==0:
         break    
@@ -79,7 +82,7 @@ while(c!=0):
                 correto = True
             else:
                 vidas = vidas -1
-                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas} \n")    
+                print(f"Você escolheu a opção errada, perdeu uma vida \nVIDA TOTAL:{vidas} \n")    
     if vidas==0:
         break    
     else:
@@ -101,7 +104,7 @@ while(c!=0):
                 correto = True
             else:
                 vidas = vidas -1
-                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas} \n")
+                print(f"Você escolheu a opção errada, perdeu uma vida \nVIDA TOTAL:{vidas} \n")
     if vidas==0:
         break    
     else:
@@ -126,7 +129,7 @@ while(c!=0):
                 correto = True
             else:
                 vidas = vidas -1
-                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas} \n")
+                print(f"Você escolheu a opção errada, perdeu uma vida \nVIDA TOTAL:{vidas} \n")
     if vidas==0:
         break    
     else:
@@ -148,7 +151,7 @@ while(c!=0):
                 correto = True
             else:
                 vidas = vidas -1
-                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas}\n")
+                print(f"Você escolheu a opção errada, perdeu uma vida \nVIDA TOTAL:{vidas}\n")
     
     
-print("fim de jogo")
+print("Fim de jogo")
