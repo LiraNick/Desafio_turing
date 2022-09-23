@@ -25,13 +25,14 @@ def buscaPergunta(linha=1):
         return NULL
     
 
-telaInicial = open('tela01.txt')
+
 conteudoFase = open('perguntasRespostas.txt')
 
+telaInicial = open('tela01.txt')
 content = telaInicial.readlines()
 
 for i in range(14):
-    print(content[i])
+    print(content[i].strip("\n"))
     
 
 endGeral = False
