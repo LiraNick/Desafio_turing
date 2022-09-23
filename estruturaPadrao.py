@@ -1,12 +1,18 @@
 import os
 import linecache
 import time
-poli = "="*10
+poli = "="*15
 correto = False
-escolha = "Escolhe a opção:"
-print(f"{poli} JOGO {poli}")
-vidas=2
+escolha = "Escolha a opção: "
 os.system('cls' if os.name == 'nt' else 'clear')
+telaInicial = open('tela01.txt')
+content = telaInicial.readlines()
+
+for i in range(14):
+    print(content[i].strip("\n"))
+    
+print(f"\n {poli} 💍 Senhor dos anéis do nicolas ;) 💍 {poli} \n")
+vidas=3
 def slowprint(texto, atraso=2):
   for c in texto:
     print(c,end='',flush=True)
@@ -18,17 +24,6 @@ pergunta = {"pergunta":"",
     
 
 
-def buscaPergunta(linha=1):
-    #reservado para teste de perguntas aleatórias
-    #linha = randrange(21)
-    
-
-    #print(pergunta)
-    #print(pergunta[0])
-    aux = perguntaLinha[0]    
-    if aux == "P":
-        
-        return pergunta
 
 c=2
 usuario=str(input("Digite seu nome de usuario: "))
@@ -39,21 +34,24 @@ while(c!=0):
         else:
             linha=1
             perguntaLinha = linecache.getline('perguntasRespostas.txt', linha)
-            pergunta["pergunta"] = perguntaLinha.strip("P:\n")
-            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).strip("1:\n")
-            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).strip("2:\n")
-            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).strip("\n")
+            pergunta["pergunta"] = perguntaLinha.replace("P: ", "").strip("\n")
+            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).replace("1: ", "").strip("\n")
+            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).replace("2: ", "").strip("\n")
+            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).replace("R: ", "").strip("\n")
             slowprint(pergunta["pergunta"],0.001)
             print("\n")
             print(1,pergunta["resposta1"])
-            print("\n")
+            
             print(2,pergunta["resposta2"])
+            print("\n")
             if str(input(escolha))==pergunta["opcaoCorreta"]:
-                print("correto")
+                print("\n")
+                print("CORRETO")
+                print("\n")
                 correto = True
             else:
                 vidas = vidas -1
-                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas}")
+                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas} \n")
         
     if vidas==0:
         break    
@@ -65,21 +63,23 @@ while(c!=0):
         else:
             linha=5
             perguntaLinha = linecache.getline('perguntasRespostas.txt', linha)
-            pergunta["pergunta"] = perguntaLinha.strip("P:\n")
-            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).strip("1:\n")
-            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).strip("2:\n")
-            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).strip("\n")
+            pergunta["pergunta"] = perguntaLinha.replace("P: ", "").strip("\n")
+            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).replace("1: ", "").strip("\n")
+            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).replace("2: ", "").strip("\n")
+            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).replace("R: ", "").strip("\n")
             slowprint(pergunta["pergunta"],0.001)
             print("\n")
             print(1,pergunta["resposta1"])
-            print("\n")
             print(2,pergunta["resposta2"])
+            print("\n")
             if str(input(escolha))==pergunta["opcaoCorreta"]:
-                print("correto")
+                print("\n")
+                print("CORRETO")
+                print("\n")
                 correto = True
             else:
                 vidas = vidas -1
-                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas}")    
+                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas} \n")    
     if vidas==0:
         break    
     else:
@@ -90,18 +90,18 @@ while(c!=0):
         else:
             linha=9
             perguntaLinha = linecache.getline('perguntasRespostas.txt', linha)
-            pergunta["pergunta"] = perguntaLinha.strip("P:\n")
-            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).strip("1:\n")
-            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).strip("2:\n")
-            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).strip("\n")
+            pergunta["pergunta"] = perguntaLinha.replace("P: ", "").strip("\n")
+            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).replace("1: ", "").strip("\n")
+            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).replace("2: ", "").strip("\n")
+            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).replace("R: ", "").strip("\n")
             slowprint(pergunta["pergunta"],0.001)
             print("\n")
             if str(input(escolha))==pergunta["opcaoCorreta"]:
-                print("correto")
+                print("\n CORRETO \n")
                 correto = True
             else:
                 vidas = vidas -1
-                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas}")
+                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas} \n")
     if vidas==0:
         break    
     else:
@@ -112,21 +112,21 @@ while(c!=0):
         else:
             linha=13
             perguntaLinha = linecache.getline('perguntasRespostas.txt', linha)
-            pergunta["pergunta"] = perguntaLinha.strip("P:\n")
-            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).strip("1:\n")
-            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).strip("2:\n")
-            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).strip("\n")
+            pergunta["pergunta"] = perguntaLinha.replace("P: ", "").strip("\n")
+            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).replace("1: ", "").strip("\n")
+            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).replace("2: ", "").strip("\n")
+            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).replace("R: ", "").strip("\n")
             slowprint(pergunta["pergunta"],0.001)
             print("\n")
             print(1,pergunta["resposta1"])
-            print("\n")
             print(2,pergunta["resposta2"])
+            print("\n")
             if str(input(escolha))==pergunta["opcaoCorreta"]:
                 print("correto")
                 correto = True
             else:
                 vidas = vidas -1
-                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas}")
+                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas} \n")
     if vidas==0:
         break    
     else:
@@ -137,10 +137,10 @@ while(c!=0):
         else:
             linha=17
             perguntaLinha = linecache.getline('perguntasRespostas.txt', linha)
-            pergunta["pergunta"] = perguntaLinha.strip("P:\n")
-            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).strip("1:\n")
-            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).strip("2:\n")
-            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).strip("\n")
+            pergunta["pergunta"] = perguntaLinha.replace("P: ", "").strip("\n")
+            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).replace("1: ", "").strip("\n")
+            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).replace("2: ", "").strip("\n")
+            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).replace("R: ", "").strip("\n")
             slowprint(pergunta["pergunta"],0.001)
             print("\n")
             if str(input(escolha))==pergunta["opcaoCorreta"]:
@@ -148,7 +148,7 @@ while(c!=0):
                 correto = True
             else:
                 vidas = vidas -1
-                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas}")
+                print(f"Você escolheu a opção errada, perdeu uma vida \n VIDA TOTAL:{vidas}\n")
     
     
 print("fim de jogo")
