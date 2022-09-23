@@ -34,10 +34,10 @@ while(c!=0):
         else:
             linha=1
             perguntaLinha = linecache.getline('perguntasRespostas.txt', linha)
-            pergunta["pergunta"] = perguntaLinha.strip("P:\n")
-            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).strip("1:\n")
-            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).strip("2:\n")
-            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).strip("\n")
+            pergunta["pergunta"] = perguntaLinha.replace("P: ", "").strip("\n")
+            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).replace("1: ", "").strip("\n")
+            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).replace("2: ", "").strip("\n")
+            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).replace("R: ", "").strip("\n")
             slowprint(pergunta["pergunta"],0.001)
             print("\n")
             print(1,pergunta["resposta1"])
@@ -63,10 +63,10 @@ while(c!=0):
         else:
             linha=5
             perguntaLinha = linecache.getline('perguntasRespostas.txt', linha)
-            pergunta["pergunta"] = perguntaLinha.strip("P:\n")
-            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).strip("1:\n")
-            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).strip("2:\n")
-            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).strip("\n")
+            pergunta["pergunta"] = perguntaLinha.replace("P: ", "").strip("\n")
+            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).replace("1: ", "").strip("\n")
+            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).replace("2: ", "").strip("\n")
+            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).replace("R: ", "").strip("\n")
             slowprint(pergunta["pergunta"],0.001)
             print("\n")
             print(1,pergunta["resposta1"])
@@ -90,10 +90,10 @@ while(c!=0):
         else:
             linha=9
             perguntaLinha = linecache.getline('perguntasRespostas.txt', linha)
-            pergunta["pergunta"] = perguntaLinha.strip("P:\n")
-            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).strip("1:\n")
-            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).strip("2:\n")
-            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).strip("\n")
+            pergunta["pergunta"] = perguntaLinha.replace("P: ", "").strip("\n")
+            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).replace("1: ", "").strip("\n")
+            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).replace("2: ", "").strip("\n")
+            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).replace("R: ", "").strip("\n")
             slowprint(pergunta["pergunta"],0.001)
             print("\n")
             if str(input(escolha))==pergunta["opcaoCorreta"]:
@@ -112,10 +112,10 @@ while(c!=0):
         else:
             linha=13
             perguntaLinha = linecache.getline('perguntasRespostas.txt', linha)
-            pergunta["pergunta"] = perguntaLinha.strip("P:\n")
-            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).strip("1:\n")
-            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).strip("2:\n")
-            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).strip("\n")
+            pergunta["pergunta"] = perguntaLinha.replace("P: ", "").strip("\n")
+            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).replace("1: ", "").strip("\n")
+            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).replace("2: ", "").strip("\n")
+            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).replace("R: ", "").strip("\n")
             slowprint(pergunta["pergunta"],0.001)
             print("\n")
             print(1,pergunta["resposta1"])
@@ -137,10 +137,10 @@ while(c!=0):
         else:
             linha=17
             perguntaLinha = linecache.getline('perguntasRespostas.txt', linha)
-            pergunta["pergunta"] = perguntaLinha.strip("P:\n")
-            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).strip("1:\n")
-            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).strip("2:\n")
-            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).strip("\n")
+            pergunta["pergunta"] = perguntaLinha.replace("P: ", "").strip("\n")
+            pergunta["resposta1"] = linecache.getline('perguntasRespostas.txt', linha+1).replace("1: ", "").strip("\n")
+            pergunta["resposta2"] = linecache.getline('perguntasRespostas.txt', linha+2).replace("2: ", "").strip("\n")
+            pergunta["opcaoCorreta"] = linecache.getline('perguntasRespostas.txt', linha+3).replace("R: ", "").strip("\n")
             slowprint(pergunta["pergunta"],0.001)
             print("\n")
             if str(input(escolha))==pergunta["opcaoCorreta"]:
