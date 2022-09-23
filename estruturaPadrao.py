@@ -4,9 +4,10 @@ import time
 poli = "="*10
 correto = False
 escolha = "Escolhe a opção:"
-print(f"{poli} JOGO {poli}")
-vidas=2
 os.system('cls' if os.name == 'nt' else 'clear')
+
+print(f"\n {poli} JOGO {poli} \n")
+vidas=3
 def slowprint(texto, atraso=2):
   for c in texto:
     print(c,end='',flush=True)
