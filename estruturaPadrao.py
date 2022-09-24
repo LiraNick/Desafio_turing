@@ -1,3 +1,4 @@
+from ast import Break
 import os
 import linecache
 import time
@@ -147,11 +148,15 @@ while(c!=0):
             slowprint(pergunta["pergunta"],0.001)
             print("\n")
             if str(input(escolha))==pergunta["opcaoCorreta"]:
-                print("correto")
+                print("correto \nVOCÊ GANHOU O JOGO!")
                 correto = True
+                
             else:
                 vidas = vidas -1
                 print(f"Você escolheu a opção errada, perdeu uma vida \nVIDA TOTAL:{vidas}\n")
-    
+    if vidas==0:
+        break    
+    else:
+        break
     
 print("Fim de jogo")
